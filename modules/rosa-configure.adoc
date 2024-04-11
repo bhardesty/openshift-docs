@@ -43,6 +43,9 @@ $ rosa login [arguments]
 |--scope
 |The OpenID scope (string). If this option is used, it replaces the default scopes. This can be repeated multiple times to specify multiple scopes. Default: `openid`
 
+|--region
+|The name of the AWS region (string). This argument overrides the default `AWS_REGION` environment variable.
+
 |--token
 |Accesses or refreshes the token (string).
 
