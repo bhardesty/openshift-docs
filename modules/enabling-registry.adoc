@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * registry/configuring-registry-operator.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="enabling-registry_{context}"]
+= Enabling the {product-registry} in {hcp-title}
+
+If you previously removed the {product-registry} from your {hcp-title-first} cluster, you can reenable it without recreating the cluster.
+
+To reenable the registry, update the `configs.imageregistry.operator.openshift.io` resource to set the `managementState` parameter to `Managed`.
+
+.Procedure
+
+* Patch the Image Registry Operator by running the following command:
++
+[source,terminal]
+----
+$ oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'
+----

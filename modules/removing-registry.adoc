@@ -1,0 +1,43 @@
+// Module included in the following assemblies:
+//
+// * registry/configuring-registry-operator.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="removing-registry_{context}"]
+= Removing the {product-registry} in {hcp-title}
+
+:FeatureName: Removing the {product-registry}
+include::snippets/technology-preview.adoc[]
+
+The Image Registry Operator installs the {product-registry} when the {hcp-title-first} cluster is created. The Operator is defined by the `configs.imageregistry.operator.openshift.io` Custom Resource Definition (CRD).
+
+If you need to remove the registry, update the `configs.imageregistry.operator.openshift.io` resource to set the `managementState` parameter to `Removed`.
+
+[IMPORTANT]
+====
+You cannot remove the {product-registry} from {rosa-classic-first} clusters.
+====
+
+Removing the {product-registry} removes the following resources from the cluster:
+
+* Registry instance
+* Registry storage and storage account
+* Image Registry Operator service account and secrets
+* Image Registry Operator pods
+
+If any resources in the cluster specify images on the {product-registry}, those resources are not modified when the registry is removed. You must manually change those image specifications.
+
+.Procedure
+
+* Patch the Image Registry Operator by running the following command:
++
+[source,terminal]
+----
+$ oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Removed"}}'
+----
++
+The Image Registry Operator pods and the registry storage are removed.
+
+.Next steps
+
+* Update the image specifications for any resources (image streams, deployments, pods, and so on) that point to images on the registry.
