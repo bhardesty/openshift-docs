@@ -3441,11 +3441,6 @@ Topics:
     Topics:
     - Name: Restoring applications
       File: restoring-applications
-  - Name: OADP and ROSA
-    Dir: oadp-rosa
-    Topics:
-    - Name: Backing up applications on ROSA STS using OADP
-      File: oadp-rosa-backing-up-applications
   - Name: OADP and AWS STS
     Dir: aws-sts
     Topics:
