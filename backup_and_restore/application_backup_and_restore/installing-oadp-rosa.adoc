@@ -1,0 +1,18 @@
+:_mod-docs-content-type: ASSEMBLY
+[id="installing-oadp-operator-rosa"]
+= Installing the OADP Operator
+include::_attributes/common-attributes.adoc[]
+:context: installing-oadp-operator-rosa
+
+toc::[]
+
+You can employ OpenShift API for Data Protection (OADP) with {product-title} clusters to back up and restore application data. Before installing OADP, you must set up role and policy credentials for OADP so that it can use the AWS API.
+
+This is a two stage process:
+
+. Prepare AWS credentials.
+. Install the OADP Operator and provide it with the IAM role.
+
+include::modules/preparing-aws-credentials-for-oadp.adoc[leveloffset=+1]
+
+include::modules/installing-oadp-rosa-sts.adoc[leveloffset=+1]
