@@ -7,6 +7,7 @@
 [id="rosa-hcp-sts-accessing-a-break-glass-cred-cli_{context}"]
 = Accessing a {product-title} cluster by using a break glass credential
 
+[role="_abstract"]
 Use the new `kubeconfig` from the break glass credential to gain temporary admin access to a {product-title} cluster.
 
 .Prerequisites
@@ -30,7 +31,8 @@ $ rosa describe break-glass-credential <break_glass_credential_id> -c <cluster_n
 ----
 $ oc get nodes
 ----
-.Example output
++
+The output of this command is:
 +
 [source,terminal]
 ----
@@ -45,7 +47,7 @@ ip-10-0-0-67.ec2.internal   Ready    worker  9m    v1.28.7+f1b5f6c
 $ kubectl auth whoami
 ----
 +
-.Example output
+The output of this command is:
 +
 [source,terminal]
 ----
@@ -73,7 +75,7 @@ subjects:
 EOF
 ----
 +
-.Example output
+The output of this command is:
 +
 [source,terminal]
 ----

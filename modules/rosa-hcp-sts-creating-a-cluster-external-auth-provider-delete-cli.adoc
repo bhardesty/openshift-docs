@@ -8,6 +8,7 @@
 :pygments-style: emacs
 :icons: font
 
+[role="_abstract"]
 Delete external authentication providers by using the ROSA CLI.
 
 .Procedure
@@ -19,7 +20,8 @@ Delete external authentication providers by using the ROSA CLI.
 $ rosa list external-auth-provider -c <cluster_name>
 ----
 +
-.Example output
+The output of this command is:
++
 [source,terminal]
 ----
 NAME        ISSUER URL
@@ -33,7 +35,8 @@ entra-test  https://login.microsoftonline.com/<group_id>/v2.0
 $ rosa delete external-auth-provider <name_of_provider> -c <cluster_name>
 ----
 +
-.Example output
+The output of this command is:
++
 [source,terminal]
 ----
 ? Are you sure you want to delete external authentication provider entra-test on cluster rosa-ext-test? Yes
@@ -48,7 +51,8 @@ I: Successfully deleted external authentication provider 'entra-test' from clust
 $ rosa list external-auth-provider -c <cluster_name>
 ----
 +
-.Example output
+The output of this command is:
++
 [source,terminal]
 ----
 E: there are no external authentication providers for this cluster

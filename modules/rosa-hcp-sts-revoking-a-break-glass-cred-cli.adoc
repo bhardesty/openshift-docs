@@ -7,6 +7,7 @@
 [id="rosa-hcp-sts-revoking-a-break-glass-cred-cli_{context}"]
 = Revoking a break glass credential for a {product-title} cluster
 
+[role="_abstract"]
 You can revoke access to any break glass credentials that you have provisioned at any time by using the `revoke break-glass-credentials` command.
 
 .Prerequisites
@@ -25,12 +26,11 @@ Running this command will revoke access for all break glass credentials related 
 +
 [source,terminal]
 ----
-$ rosa revoke break-glass-credentials -c <cluster_name> <1>
+$ rosa revoke break-glass-credentials -c <cluster_name>
 ----
-<1> Replace <cluster_name> with the name of your cluster.
 +
-.Example output
-
+The output of this command is:
++
 [source,terminal]
 ----
 ? Are you sure you want to revoke all the break glass credentials on cluster 'my-cluster'?: Yes
@@ -47,7 +47,7 @@ I: Successfully requested revocation for all break glass credentials from cluste
 $ rosa list break-glass-credential -c <cluster_name>
 ----
 +
-.Example output
+The output of this command is:
 +
 [source,terminal]
 ----
@@ -62,7 +62,7 @@ ID                                USERNAME    STATUS
 $ rosa describe break-glass-credential <break_glass_credential_id> -c <cluster_name>
 ----
 +
-.Example output
+The output of this command is:
 +
 [source,terminal]
 ----
