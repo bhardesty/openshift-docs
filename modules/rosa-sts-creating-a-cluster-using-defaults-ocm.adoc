@@ -14,6 +14,7 @@ ifeval::["{context}" == "rosa-quickstart"]
 :quickstart:
 endif::[]
 
+[role="_abstract"]
 When using {cluster-manager-first} on the {hybrid-console-url} to create a {product-title} (ROSA) cluster that uses the AWS Security Token Service (STS), you can select the default options to create the cluster quickly. You can also use the admin {cluster-manager} IAM role to enable automatic deployment of the cluster-specific Operator roles and the OpenID Connect (OIDC) provider.
 
 ifdef::quick-install[]
